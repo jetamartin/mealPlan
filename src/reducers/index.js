@@ -3,7 +3,12 @@ import {
   REMOVE_FROM_CALENDAR
 } from '../actions'
 import { combineReducers } from 'redux'
-
+/* Since you could have the same food on the calendar on multiple days you don't
+  want to store that same food in the calendar store multiple times (don't want
+  to duplicate data in the store). Instead we'll store the food items in the food
+  part of the store and simply save it's ID in the calendar..and this ID will point
+  back to the food information in the food part of the store. 
+*/
 function food (state = {}, action) {
   switch (action.type) {
     case ADD_RECIPE :

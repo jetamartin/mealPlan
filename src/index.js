@@ -23,6 +23,8 @@ const store = createStore(
     applyMiddleware(logger)
   )
 );
+console.log('Store', store.getState());
+
 
 ReactDOM.render(
   <Provider store={store}>
